@@ -1,0 +1,67 @@
+$red: #F76141;
+
+$blue: #3697F1;
+$blue-200: #ECF2FF;
+$blue-100: rgba(248, 250, 255, 0.4);
+
+$green: #6DB90C;
+
+$white: #FFFFFF;
+$white-100: #FAFAFA;
+
+$black: #000000;
+$black-900: #1B212D;
+
+$grey: rgba(0, 0, 0, 0.55);
+$grey-900: rgba(0, 0, 0, 0.45);
+$grey-850: rgba(0, 0, 0, 0.4);
+$grey-800: rgba(0, 0, 0, 0.35);
+$grey-700: rgba(0, 0, 0, 0.25);
+$grey-600: rgba(0, 0, 0, 0.3);
+$grey-500: rgba(0, 0, 0, 0.2);
+$grey-400: rgba(0, 0, 0, 0.07);
+$grey-300: rgba(0, 0, 0, 0.05);
+$grey-200: rgba(0, 0, 0, 0.02);
+$grey-100: rgba(0, 0, 0, 0.01);
+
+$yellow: #F5C828;
+$lightGreen: #C8EE44;
+
+
+$colors: (
+  red: $red,
+  blue: $blue,
+  green: $green,
+  white: $white,
+  black: $black,
+  yellow: $yellow,
+  light-green: $lightGreen,
+  primary: $black-900,
+  on-primary: $blue-200,
+  on-primary-disabled: $blue-100,
+  on-touch: $grey-300,
+  secondary: $grey,
+  tertiary: $grey-800,
+  disabled: $grey-700,
+);
+
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
+
+$icon-colors: (
+  secondary: $grey-900,
+  tertiary: $grey-600,
+  disabled: $grey-500,
+);
+
+@each $color, $value in $icon-colors {
+  .icon-#{$color} {
+    color: $value;
+  }
+}
