@@ -72,117 +72,117 @@ export default {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 0.867rem;
+  line-height: 1.333rem;
   border: none;
-  color: #ecf2ff;
+  color: $blue-200;
   cursor: pointer;
   outline: none;
-  border: 1px solid transparent;
-  border-radius: 100px;
-  padding: 10px 20px;
+  border: 0.067rem solid transparent;
+  border-radius: 6.667rem;
+  padding: 0.667rem 1.333rem;
   &_medium {
-    padding: 10px 20px;
+    padding: 0.667rem 1.333rem;
   }
   &_small {
-    padding: 5px 20px;
-    font-size: 12px;
+    padding: 0.333rem 1.333rem;
+    font-size: 0.8rem;
   }
   &_primary {
-    background: #1b212d;
+    background: $black-900;
     .button__icon {
-      background-color: #ecf2ff;
+      background-color: $blue-200;
     }
     &:hover {
-      background: #c8ee44;
-      color: #000000;
+      background: $lightGreen;
+      color: $black;
       transition: background-color 0.2s ease-out;
       .button__icon {
-        background-color: #000;
+        background-color: $black;
       }
     }
     &:disabled {
-      background: #1b212d;
-      color: rgba(248, 250, 255, 0.4);
+      background: $black-900;
+      color: $blue-100;
       .button__icon {
-        background: rgba(248, 250, 255, 0.4);
+        background: $blue-100;
       }
     }
   }
   &_secondary {
-    background: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.55);
+    background: $grey-300;
+    color: $grey;
     .button__icon {
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $grey-900;
     }
     &:hover {
-      background: rgba(0, 0, 0, 0.05);
-      color: #1b212d;
+      background: $grey-300;
+      color: $black-900;
       transition: background-color 0.2s ease-out;
       .button__icon {
-        background-color: #1b212d;
+        background-color: $black-900;
       }
     }
     &:disabled {
-      background: rgba(0, 0, 0, 0.05);
-      color: rgba(0, 0, 0, 0.25);
+      background: $grey-300;
+      color: $grey-700;
       .button__icon {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $grey-500;
       }
     }
   }
   &_tertiary {
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    color: rgba(0, 0, 0, 0.55);
+    border: 0.067rem solid $grey-400;
+    color: $grey;
     .button__icon {
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $grey-900;
     }
     &:hover {
-      color: #1b212d;
+      color: $black-900;
       transition: background-color 0.2s ease-out;
       .button__icon {
-        background-color: #1b212d;
+        background-color: $black-900;
       }
     }
     &:disabled {
-      color: rgba(0, 0, 0, 0.25);
+      color: $grey-700;
       .button__icon {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $grey-500;
       }
     }
   }
   &_floating {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    color: rgba(0, 0, 0, 0.55);
+    background: $white;
+    border: 0.067rem solid $grey-400;
+    color: $grey;
     .button__icon {
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $grey-900;
     }
     &:hover {
-      color: #1b212d;
+      color: $black-900;
       transition: background-color 0.2s ease-out;
       .button__icon {
-        background-color: #1b212d;
+        background-color: $black-900;
       }
     }
     &:disabled {
-      color: rgba(0, 0, 0, 0.25);
+      color: $grey-700;
       .button__icon {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $grey-500;
       }
     }
   }
   &__icon {
     position: relative;
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 1.333rem;
+    height: 1.333rem;
+    margin-right: 0.333rem;
     &_right {
       order: 1;
       margin: 0;
-      margin-left: 5px;
+      margin-left: 0.333rem;
     }
   }
 }
