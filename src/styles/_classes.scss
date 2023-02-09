@@ -1,16 +1,16 @@
 .scroll {
   &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 0.533rem;
+    height: 0.533rem;
     background-color: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.08);
-    border-radius: 100px;
+    background: $grey-300;
+    border-radius: 6.667rem;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: $grey-400;
   }
 }
