@@ -50,38 +50,38 @@ export default {
 
 <style lang="scss" scoped>
 .select {
-  width: 16px;
-  height: 16px;
+  width: 1.067rem;
+  height: 1.067rem;
   display: flex;
   cursor: pointer;
   &__input {
-    width: 16px;
-    height: 16px;
+    width: 1.067rem;
+    height: 1.067rem;
     display: inline-block;
     cursor: pointer;
     vertical-align: top;
     outline: none;
     flex-shrink: 0;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 100px;
+    border: 0.067rem solid $grey-400;
+    border-radius: 6.667rem;
     &:hover {
       transition: border 0.3s ease-in-out;
-      border: 1px solid #1b212d;
+      border: 0.067rem solid $black-900;
     }
     &_selected {
       background-image: url("~@/assets/img/icon/mark-black.svg");
       background-repeat: no-repeat;
-      background-position: 50% 3px;
+      background-position: 50% 0.2rem;
       background-size: auto;
-      border: 1px solid #1b212d;
+      border: 0.067rem solid $black-900;
     }
     &:checked {
       background-image: url("~@/assets/img/icon/mark.svg");
       background-repeat: no-repeat;
-      background-position: 50% 3px;
+      background-position: 50% 0.2rem;
       background-size: auto;
-      background-color: #1b212d;
-      border: 1px solid #1b212d;
+      background-color: $black-900;
+      border: 0.067rem solid $black-900;
     }
     &:disabled {
       opacity: 0.2;
