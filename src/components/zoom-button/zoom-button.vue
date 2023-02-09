@@ -5,7 +5,11 @@
       class="zoom-button__button zoom-button__button_minus"
       @click="minus"
     />
-    <div class="zoom-button__type" :class="`zoom-button__type_${type}`"></div>
+    <div
+      @click="changeType"
+      class="zoom-button__type"
+      :class="`zoom-button__type_${typeData}`"
+    ></div>
     <div class="zoom-button__text">
       <slot>{{ text }}</slot>
     </div>
@@ -37,12 +41,20 @@ export default {
       default: "",
     },
   },
+  data() {
+    return {
+      typeData: this.type,
+    };
+  },
   methods: {
     minus() {
-      this.$emit("minus");
+      this.$emit("minus", this.typeData);
     },
     plus() {
-      this.$emit("plus");
+      this.$emit("plus", this.typeData);
+    },
+    changeType() {
+      this.typeData = this.typeData === "height" ? "width" : "height";
     },
   },
 };
@@ -54,83 +66,84 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3px;
-  padding: 5px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 100px;
+  gap: 0.2rem;
+  padding: 0.333rem 0.667rem;
+  border: 0.067rem solid $grey-400;
+  border-radius: 6.667rem;
   &:hover {
     transition-duration: 0.2s;
     .zoom-button__button {
       &_minus {
-        background-color: #1b212d;
+        background-color: $black-900;
       }
       &_plus {
-        background-color: #1b212d;
+        background-color: $black-900;
       }
     }
     .zoom-button__type {
       &::before {
-        border: 1px solid #1b212d;
+        border: 0.067rem solid $black-900;
       }
     }
     .zoom-button__text {
-      color: #1b212d;
+      color: $black-900;
     }
   }
   &_disabled {
     pointer-events: none;
     .zoom-button__button {
       &_minus {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $grey-500;
       }
       &_plus {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $grey-500;
       }
     }
     .zoom-button__type {
       &::before {
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 0.067rem solid $grey-500;
       }
     }
     .zoom-button__text {
-      color: rgba(0, 0, 0, 0.25);
+      color: $grey-700;
     }
   }
   &__button {
     border: none;
     cursor: pointer;
     outline: none;
-    height: 20px;
-    width: 20px;
+    height: 1.333rem;
+    width: 1.333rem;
     &:active,
     &:focus {
       outline: none;
     }
     &_minus {
-      webkit-mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
       mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $grey-900;
     }
     &_plus {
-      webkit-mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
       mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $grey-900;
     }
   }
   &__type {
-    height: 20px;
-    width: 20px;
+    height: 1.333rem;
+    width: 1.333rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     &::before {
       content: "";
       box-sizing: border-box;
       display: block;
-      width: 10px;
-      height: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      border-radius: 2px;
+      width: 0.667rem;
+      height: 0.933rem;
+      border: 0.067rem solid $grey-600;
+      border-radius: 0.133rem;
     }
     &_width {
       &::before {
@@ -139,14 +152,14 @@ export default {
     }
   }
   &__text {
-    width: 23px;
+    width: 1.533rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 500;
-    font-size: 11px;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.35);
+    font-size: 0.733rem;
+    line-height: 1.333rem;
+    color: $grey-800;
   }
 }
 </style>
