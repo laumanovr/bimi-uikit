@@ -1,0 +1,25 @@
+/* Для всех новых иконок нужно добавлять в этом файле их название, как показано ниже в @each $icon, также для демо нужно добавлять
+  название в файле icons.vue, в компоненте Text, в свойсто icons, в data'e
+*/
+
+@each $icon in ic-arrow-medium-down, ic-arrow-medium-left, ic-arrow-medium-right,
+  ic-arrow-medium-up, ic-arrow-nav-back, ic-arrow-nav-forward,
+  ic-arrow-small-down, ic-arrow-small-left, ic-arrow-small-right,
+  ic-arrow-small-up, ic-download, ic-clear, ic-cross-medium, ic-cross-small,
+  ic-drag, ic-fit-on-screen, ic-icons-list, ic-keywords, ic-list, ic-minus,
+  ic-plus, ic-sort-az, ic-sort-za, ic-apple, ic-desktop, ic-google-disk,
+  ic-google-play, ic-checkmark, ic-color, ic-error, ic-lock-small, ic-notify,
+  ic-add-chart, ic-back-time, ic-calendar, ic-crown, ic-delete, ic-earth,
+  ic-eye-off, ic-eye, ic-img-placeholder, ic-info, ic-lock, ic-log-out,
+  ic-more-h, ic-more, ic-no-icon, ic-search, ic-setting-small, ic-temp, ic-user
+{
+  .icon-#{$icon} {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -webkit-mask: url(../assets/img/icon/#{$icon}.svg) no-repeat 50% 50%;
+    mask: url(../assets/img/icon/#{$icon}.svg) no-repeat 50% 50%;
+    background-color: $black-900;
+  }
+}
