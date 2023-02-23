@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "yarn run build:lib && yarn run build:style",
+    "build:lib": "vue-cli-service build --target lib --name ui-kit src/index.js",
+    "build:style": "sass src/styles/main.scss dist/styles.css --style compressed",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
