@@ -119,12 +119,12 @@ export default {
       outline: none;
     }
     &_minus {
-      -webkit-mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("~@/assets/img/icon/ic-minus.svg") no-repeat 50% 50%;
       mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
       background-color: $grey-900;
     }
     &_plus {
-      -webkit-mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("~@/assets/img/icon/ic-plus.svg") no-repeat 50% 50%;
       mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
       background-color: $grey-900;
     }

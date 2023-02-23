@@ -1,12 +1,11 @@
 <template>
-  <button :class="[getClasses]" :disabled="disabled" @click="onButtonClick">
+  <button :class="getClasses" :disabled="disabled" @click="onButtonClick">
     <span
       v-if="icon"
       class="button__icon"
       :class="[`button__icon_${iconPosition}`]"
       :style="getIconStyle"
     />
-    <!-- @slot Текст для компонента кнопки без иконки -->
     <slot>Текст на кнопке</slot>
   </button>
 </template>
