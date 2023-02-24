@@ -9,7 +9,7 @@
     "build:style": "sass src/styles/main.scss dist/styles.css --style compressed",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o storybook"
   },
   "dependencies": {
     "bootstrap": "5.2.3",

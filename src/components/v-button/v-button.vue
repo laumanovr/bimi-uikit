@@ -52,8 +52,8 @@ export default {
     },
     getIconStyle() {
       return {
-        "-webkit-mask": `url(${require(`@/assets/img/icon/${this.icon}.svg`)}) no-repeat 50% 50%`,
-        mask: `url(${require(`@/assets/img/icon/${this.icon}.svg`)}) no-repeat 50% 50%`,
+        "-webkit-mask": `url(${require(`../../assets/img/icon/${this.icon}.svg`)}) no-repeat 50% 50%`,
+        mask: `url(${require(`../../assets/img/icon/${this.icon}.svg`)}) no-repeat 50% 50%`,
       };
     },
   },
@@ -66,6 +66,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../styles/_colors';
+
 .button {
   display: flex;
   align-items: center;
