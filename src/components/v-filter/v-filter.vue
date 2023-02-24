@@ -68,6 +68,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/_colors";
+
 .filter {
   display: flex;
   &__radio {
