@@ -27,14 +27,13 @@ $grey-100: rgba(0, 0, 0, 0.01);
 $yellow: #F5C828;
 $lightGreen: #C8EE44;
 
-
 $colors: (
-  red: $red,
-  blue: $blue,
-  green: $green,
-  white: $white,
-  black: $black,
-  yellow: $yellow,
+  'red': $red,
+  'blue': $blue,
+  'green': $green,
+  'white': $white,
+  'black': $black,
+  'yellow': $yellow,
   light-green: $lightGreen,
   primary: $black-900,
   on-primary: $blue-200,

@@ -11,7 +11,7 @@
       :class="`zoom-button__type_${typeData}`"
     ></div>
     <div class="zoom-button__text">
-      <slot>{{ text }}</slot>
+      <slot />
     </div>
     <button
       type="button"
@@ -35,10 +35,7 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-    },
-    text: {
-      type: String,
-      default: "",
+      required: false
     },
   },
   data() {
@@ -61,6 +58,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../styles/_colors';
+
 .zoom-button {
   width: fit-content;
   display: flex;
@@ -119,13 +118,13 @@ export default {
       outline: none;
     }
     &_minus {
-      -webkit-mask: url("~@/assets/img/icon/ic-minus.svg") no-repeat 50% 50%;
-      mask: url("~@/assets/img/icon/minus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("../../assets/img/icon/ic-minus.svg") no-repeat 50% 50%;
+      mask: url("../../assets/img/icon/ic-minus.svg") no-repeat 50% 50%;
       background-color: $grey-900;
     }
     &_plus {
-      -webkit-mask: url("~@/assets/img/icon/ic-plus.svg") no-repeat 50% 50%;
-      mask: url("~@/assets/img/icon/plus.svg") no-repeat 50% 50%;
+      -webkit-mask: url("../../assets/img/icon/ic-plus.svg") no-repeat 50% 50%;
+      mask: url("../../assets/img/icon/ic-plus.svg") no-repeat 50% 50%;
       background-color: $grey-900;
     }
   }
