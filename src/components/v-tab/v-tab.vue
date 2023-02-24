@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/_colors";
+
 .tab {
   display: flex;
   align-items: center;

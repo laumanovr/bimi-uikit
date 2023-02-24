@@ -17,6 +17,7 @@ export const Button = (args, { argTypes }) => ({
             icon="ic-temp"
             title="one"
             :active="activeIndex === 0"
+            style="margin-bottom: 10px;"
           ></v-tab>
           <v-tab
             @click.native="onClick(1)"
