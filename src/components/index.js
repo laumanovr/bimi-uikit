@@ -4,6 +4,7 @@ import VFilter from "./v-filter";
 import TabManager from "./tab-manager";
 import VTab from "./v-tab";
 import LabelColor from "./label-color";
+import VSwitch from "./v-switch";
 
 export default {
   VButton,
@@ -12,4 +13,5 @@ export default {
   TabManager,
   VTab,
   LabelColor,
+  VSwitch
 };
