@@ -3,24 +3,22 @@
     <div class="checkbox-switch">
       <input
           type="checkbox"
-          :id="id"
+          :id="uniqueId"
           name="switch"
           v-model="isSelected"
           :disabled="isDisabled"
       >
-      <label :for="id" :class="{'checkbox-switch--disabled': isDisabled}"></label>
+      <label :for="uniqueId" :class="{'checkbox-switch--disabled': isDisabled}"></label>
     </div>
   </div>
 </template>
 
 <script>
+import RandomStringMixin from '../../mixins/random-string';
 export default {
   name: 'v-switch',
+  mixins: [RandomStringMixin],
   props: {
-    id: {
-      type: String,
-      default: '1'
-    },
     isChecked: {
       type: Boolean,
       default: false
@@ -38,6 +36,9 @@ export default {
       set(val){
         this.$emit('onChange', val);
       }
+    },
+    uniqueId() {
+      return this.generateRandomString();
     }
   }
 }
