@@ -11,7 +11,7 @@ export const Switch = (args, { argTypes }) => ({
     template: `
       <div>
         <v-switch id="1"/>
-        <v-switch id="2" is-checked is-disabled/>
+        <v-switch id="2" is-checked is-disabled style="margin: 20px 0"/>
         <v-switch id="3" is-disabled/>
       </div>
     `

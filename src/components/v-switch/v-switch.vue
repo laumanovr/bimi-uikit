@@ -48,7 +48,6 @@ export default {
 .radio-switch {
   position: relative;
   display: inline-block;
-  margin-bottom: 20px;
   width: 30px;
   height: 20px;
 
