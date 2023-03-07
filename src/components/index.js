@@ -5,6 +5,7 @@ import TabManager from "./tab-manager";
 import VTab from "./v-tab";
 import LabelColor from "./label-color";
 import VSwitch from "./v-switch";
+import ThemeSwitch from "./theme-switch";
 
 export default {
   VButton,
@@ -13,5 +14,6 @@ export default {
   TabManager,
   VTab,
   LabelColor,
-  VSwitch
+  VSwitch,
+  ThemeSwitch
 };
