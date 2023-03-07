@@ -1,9 +1,9 @@
 <template>
-  <div class="checkbox-switch">
+  <div class="theme-switch">
     <input type="checkbox" :id="id" name="switch" v-model="isSelected">
     <label :for="id">
-      <img class="icon-day" :src="require('../../assets/img/icon/sun.svg')">
-      <img class="icon-night" :src="require('../../assets/img/icon/moon.svg')">
+      <img class="theme-switch__icon-day" :src="require('../../assets/img/icon/sun.svg')">
+      <img class="theme-switch__icon-night" :src="require('../../assets/img/icon/moon.svg')">
     </label>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss">
 @import '../../styles/_colors';
-.checkbox-switch {
+.theme-switch {
   position: relative;
   display: inline-block;
   width: 38px;
@@ -71,14 +71,14 @@ export default {
     }
   }
 
-  .icon-day {
+  &__icon-day {
     position: absolute;
     top: 3px;
     left: 3px;
     font-size: 20px;
   }
 
-  .icon-night {
+  &__icon-night {
     position: absolute;
     top: 6px;
     right: 6px;
@@ -88,11 +88,11 @@ export default {
   input:checked + label {
     background-color: $white-100;
 
-    .icon-day {
+    .theme-switch__icon-day {
       display: block;
     }
 
-    .icon-night {
+    .theme-switch__icon-night {
       display: none;
     }
 
@@ -103,11 +103,11 @@ export default {
   }
 
   input:not(:checked) + label {
-    .icon-day {
+    .theme-switch__icon-day {
       display: none;
     }
 
-    .icon-night {
+    .theme-switch__icon-night {
       display: block;
     }
 

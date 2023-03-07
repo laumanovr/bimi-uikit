@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="radio-switch">
+    <div class="checkbox-switch">
       <input
           type="checkbox"
           :id="id"
@@ -8,7 +8,7 @@
           v-model="isSelected"
           :disabled="isDisabled"
       >
-      <label :for="id" :class="{'disabled': isDisabled}"></label>
+      <label :for="id" :class="{'checkbox-switch--disabled': isDisabled}"></label>
     </div>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 @import '../../styles/_colors';
-.radio-switch {
+.checkbox-switch {
   position: relative;
   display: inline-block;
   width: 30px;
@@ -79,7 +79,7 @@ export default {
       transition: transform 0.2s ease;
     }
 
-    &.disabled {
+    &.checkbox-switch--disabled {
       background-color: $grey-400;
       cursor: default;
       &:after {
@@ -95,7 +95,7 @@ export default {
       transform: translateX(12px);
     }
 
-    &.disabled {
+    &.checkbox-switch--disabled {
       background-color: $grey-400;
       cursor: default;
       &:after {
