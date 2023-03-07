@@ -10,9 +10,9 @@ export const Switch = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     template: `
       <div>
-        <v-switch id="1"/>
-        <v-switch id="2" is-checked is-disabled style="margin: 20px 0"/>
-        <v-switch id="3" is-disabled/>
+        <v-switch />
+        <v-switch is-checked is-disabled style="margin: 20px 0"/>
+        <v-switch is-disabled/>
       </div>
     `
 })

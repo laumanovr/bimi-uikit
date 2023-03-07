@@ -14,7 +14,7 @@ export const ThemSwitch = (args, { argTypes }) => ({
           <theme-switch />
         </div>
         <div>
-          <theme-switch is-checked id="2" />
+          <theme-switch is-checked />
         </div>
       </div>
     `
