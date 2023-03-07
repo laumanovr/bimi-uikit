@@ -1,7 +1,7 @@
 <template>
   <div class="theme-switch">
-    <input type="checkbox" :id="id" name="switch" v-model="isSelected">
-    <label :for="id">
+    <input type="checkbox" :id="uniqueId" name="switch" v-model="isSelected">
+    <label :for="uniqueId">
       <img class="theme-switch__icon-day" :src="require('../../assets/img/icon/sun.svg')">
       <img class="theme-switch__icon-night" :src="require('../../assets/img/icon/moon.svg')">
     </label>
@@ -9,13 +9,11 @@
 </template>
 
 <script>
+import RandomStringMixin from '../../mixins/random-string';
 export default {
   name: 'theme-switch',
+  mixins: [RandomStringMixin],
   props: {
-    id: {
-      type: String,
-      default: '1'
-    },
     isChecked: {
       type: Boolean,
       default: false
@@ -29,6 +27,9 @@ export default {
       set(val) {
         this.$emit('onChange', val);
       }
+    },
+    uniqueId() {
+      return this.generateRandomString();
     }
   }
 }
