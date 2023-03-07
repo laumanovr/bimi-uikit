@@ -8,11 +8,11 @@
 export default {
   props: {
     text: {
-      tyep: [String, Number],
+      type: [String, Number],
       default: null,
     },
     variant: {
-      tyep: String,
+      type: String,
       default: "white",
       validator: function (value) {
         return ["red", "white", "green"].indexOf(value) !== -1;
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../styles/_colors";
 
 .notification {

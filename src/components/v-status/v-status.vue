@@ -6,7 +6,7 @@
 export default {
   props: {
     variant: {
-      tyep: String,
+      type: String,
       default: "ready",
       validator: function (value) {
         return ["ready", "prepare"].indexOf(value) !== -1;
