@@ -17,6 +17,10 @@ export default {
     isChecked: {
       type: Boolean,
       default: false
+    },
+    id: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -29,7 +33,7 @@ export default {
       }
     },
     uniqueId() {
-      return this.generateRandomString();
+      return this.id || this.generateRandomString();
     }
   }
 }
