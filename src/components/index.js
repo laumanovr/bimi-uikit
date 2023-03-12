@@ -9,6 +9,8 @@ import VNotification from "./v-notification";
 import VStatus from "./v-status";
 import VTip from "./v-tip";
 import VHint from "./v-hint";
+import VSwitch from "./v-switch";
+import ThemeSwitch from "./theme-switch";
 
 export default {
   VButton,
@@ -22,4 +24,6 @@ export default {
   VStatus,
   VTip,
   VHint,
+  VSwitch,
+  ThemeSwitch,
 };
