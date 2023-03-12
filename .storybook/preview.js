@@ -1,4 +1,6 @@
-import '../src/styles/main.scss';
+import "../src/styles/main.scss";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,4 +10,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};

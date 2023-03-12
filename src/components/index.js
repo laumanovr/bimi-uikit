@@ -7,6 +7,8 @@ import LabelColor from "./label-color";
 import VLabel from "./v-label";
 import VNotification from "./v-notification";
 import VStatus from "./v-status";
+import VTip from "./v-tip";
+import VHint from "./v-hint";
 
 export default {
   VButton,
@@ -18,4 +20,6 @@ export default {
   VLabel,
   VNotification,
   VStatus,
+  VTip,
+  VHint,
 };
