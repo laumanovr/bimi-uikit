@@ -18,7 +18,7 @@ export const DropdownSingle = (args, { argTypes }) => ({
         };
     },
     template: `
-      <div style="display: flex">
+      <div style="display: flex; align-items: flex-start">
         <single-dropdown :items="list" :dropdown-name="'Single dropdown'" style="margin-right: 80px;" />
         <single-dropdown :items="list" :dropdown-name="'Single dropdown with icon'" has-icon />
       </div>
