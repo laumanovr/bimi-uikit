@@ -19,8 +19,10 @@
 </template>
 
 <script>
+import OutsideClickMixin from '../../mixins/outside-click';
 export default {
   name: 'single-dropdown',
+  mixins: [OutsideClickMixin],
   props: {
     items: {
       type: Array,
@@ -60,12 +62,13 @@ export default {
     border: 1px solid;
     border-radius: 20px;
     cursor: pointer;
+    background: $white;
   }
   &__list {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     padding: 15px 10px;
-    min-width: 130px; // later modify
+    min-width: 130px;
   }
   &__wrapper-item {
     display: flex;
