@@ -20,5 +20,8 @@ Tip.args = {
   title: "To Log out press this icon",
   target: "tip",
   placement: "right",
+  ok: () => {
+    console.log("plus");
+  },
   default: "",
 };
