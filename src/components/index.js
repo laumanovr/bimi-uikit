@@ -9,6 +9,7 @@ import VNotification from "./v-notification";
 import VStatus from "./v-status";
 import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
+import VTable from "./v-table";
 
 export default {
   VButton,
@@ -21,5 +22,6 @@ export default {
   VNotification,
   VStatus,
   VSwitch,
-  ThemeSwitch
+  ThemeSwitch,
+  VTable
 };
