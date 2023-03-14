@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import OutsideClickMixin from '../../mixins/outside-click';
+import OutsideDropdownClickMixin from '../../mixins/outside-dropdown-click';
 export default {
   name: 'single-dropdown',
-  mixins: [OutsideClickMixin],
+  mixins: [OutsideDropdownClickMixin],
   props: {
     items: {
       type: Array,
