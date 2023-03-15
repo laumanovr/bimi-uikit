@@ -24,6 +24,7 @@
         cursor: pointer;
         i {
           padding-left: 12px;
+          height: 18px;
         }
         &:first-child {
           min-width: 110px;
@@ -52,6 +53,10 @@
           &:after {
             opacity: 1;
           }
+        }
+        .th {
+          display: flex;
+          align-items: center;
         }
       }
     }
