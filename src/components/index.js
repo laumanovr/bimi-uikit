@@ -9,6 +9,7 @@ import VNotification from "./v-notification";
 import VStatus from "./v-status";
 import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
+import VTable from "./v-table";
 import SingleDropdown from './single-dropdown';
 import MultipleDropdown from './multiple-dropdown';
 import VDivider from './v-divider';
@@ -25,6 +26,7 @@ export default {
   VStatus,
   VSwitch,
   ThemeSwitch,
+  VTable,
   SingleDropdown,
   MultipleDropdown,
   VDivider
