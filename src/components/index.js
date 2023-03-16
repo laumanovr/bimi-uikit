@@ -11,6 +11,7 @@ import VTip from "./v-tip";
 import VHint from "./v-hint";
 import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
+import VTooltip from "./v-tooltip";
 
 export default {
   VButton,
@@ -24,6 +25,7 @@ export default {
   VStatus,
   VTip,
   VHint,
+  VTooltip,
   VSwitch,
   ThemeSwitch,
 };

@@ -1,34 +1,41 @@
 <template>
-  <b-tooltip
-    :target="target"
-    custom-class="tip"
-    triggers="focus"
-    ref="tooltip"
+  <v-tooltip
+    class="tip"
+    event="click"
+    backgroundColor="#3697F1"
+    color="#ffffff"
+    padding="15px 20px"
+    borderRadius="15px"
     :placement="placement"
   >
-    <div class="tip__wrapper">
+    <template #handler>
+      <slot name="handler"></slot>
+    </template>
+    <template #content>
       <div class="tip__title body-xs">
-        <slot>{{ title }}</slot>
+        <slot name="content">{{ title }}</slot>
       </div>
 
-      <button class="tip__button label-xmicro" @click="onClose">OK</button>
-    </div>
-  </b-tooltip>
+      <button
+        class="tip__button label-xmicro"
+        data-tooltip-close
+        @click="onClose"
+      >
+        OK
+      </button>
+    </template>
+  </v-tooltip>
 </template>
 
 <script>
-import { BTooltip } from "bootstrap-vue";
+import VTooltip from "../v-tooltip/v-tooltip.vue";
 
 export default {
   name: "VTip",
   components: {
-    BTooltip,
+    VTooltip,
   },
   props: {
-    target: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       default: null,
@@ -36,11 +43,13 @@ export default {
     placement: {
       type: String,
       default: "top",
+      validator(value) {
+        return ["top", "right", "bottom", "left"].some((el) => el === value);
+      },
     },
   },
   methods: {
     onClose() {
-      this.$refs.tooltip.$emit("close");
       this.$emit("ok");
     },
   },
@@ -48,29 +57,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/_colors";
+
 .tip {
-  opacity: 1 !important;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
-  &[x-placement^="top"] {
-    .arrow::before {
-      border-top-color: #3697f1;
-    }
-  }
-  &[x-placement^="bottom"] {
-    .arrow::before {
-      border-bottom-color: #3697f1;
-    }
-  }
-  &[x-placement^="right"] {
-    .arrow::before {
-      border-right-color: #3697f1;
-    }
-  }
-  &[x-placement^="left"] {
-    .arrow::before {
-      border-left-color: #3697f1;
-    }
-  }
+  filter: drop-shadow(0px 4px 20px $grey-650);
   &__wrapper {
     text-align: left;
   }
@@ -79,18 +69,12 @@ export default {
   }
   &__button {
     padding: 0px 8px;
-    background: #ffffff;
+    background: $white;
     border-radius: 100px;
-    color: #3697f1;
+    color: $blue;
     border: none;
     cursor: pointer;
     outline: none;
-  }
-  .tooltip-inner {
-    padding: 15px 20px;
-    background: #3697f1;
-    border-radius: 10px;
-    color: #ffffff;
   }
 }
 </style>

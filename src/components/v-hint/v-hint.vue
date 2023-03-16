@@ -1,23 +1,32 @@
 <template>
-  <b-tooltip custom-class="hint" :target="target" :placement="placement">
-    <div class="hint__title body-xs">
-      <slot>{{ title }}</slot>
-    </div></b-tooltip
+  <v-tooltip
+    class="tip"
+    event="hover"
+    backgroundColor="#ffffff"
+    color="#1b212d"
+    padding="10px 15px"
+    :placement="placement"
   >
+    <template #handler>
+      <slot name="handler"></slot>
+    </template>
+    <template #content>
+      <div class="hint__title body-xs">
+        <slot name="content">{{ title }}</slot>
+      </div>
+    </template>
+  </v-tooltip>
 </template>
 
 <script>
-import { BTooltip } from "bootstrap-vue";
+import VTooltip from "../v-tooltip/v-tooltip.vue";
+
 export default {
   name: "VHint",
   components: {
-    BTooltip,
+    VTooltip,
   },
   props: {
-    target: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       default: null,
@@ -25,43 +34,18 @@ export default {
     placement: {
       type: String,
       default: "top",
+      validator(value) {
+        return ["top", "right", "bottom", "left"].some((el) => el === value);
+      },
     },
   },
 };
 </script>
 
 <style lang="scss">
+@import "../../styles/_colors";
+
 .hint {
-  opacity: 1 !important;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
-  &[x-placement^="top"] {
-    .arrow::before {
-      border-top-color: #ffffff;
-    }
-  }
-  &[x-placement^="bottom"] {
-    .arrow::before {
-      border-bottom-color: #ffffff;
-    }
-  }
-  &[x-placement^="right"] {
-    .arrow::before {
-      border-right-color: #ffffff;
-    }
-  }
-  &[x-placement^="left"] {
-    .arrow::before {
-      border-left-color: #ffffff;
-    }
-  }
-  &__wrapper {
-    text-align: left;
-  }
-  .tooltip-inner {
-    padding: 10px 15px;
-    background: #ffffff;
-    border-radius: 10px;
-    color: #1b212d;
-  }
+  filter: drop-shadow(0px 4px 20px $grey-650);
 }
 </style>
