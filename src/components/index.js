@@ -12,6 +12,10 @@ import VHint from "./v-hint";
 import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
 import VTooltip from "./v-tooltip";
+import VTable from "./v-table";
+import SingleDropdown from "./single-dropdown";
+import MultipleDropdown from "./multiple-dropdown";
+import VDivider from "./v-divider";
 
 export default {
   VButton,
@@ -28,4 +32,8 @@ export default {
   VTooltip,
   VSwitch,
   ThemeSwitch,
+  VTable,
+  SingleDropdown,
+  MultipleDropdown,
+  VDivider,
 };
