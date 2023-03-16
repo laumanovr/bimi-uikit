@@ -7,12 +7,15 @@ import LabelColor from "./label-color";
 import VLabel from "./v-label";
 import VNotification from "./v-notification";
 import VStatus from "./v-status";
+import VTip from "./v-tip";
+import VHint from "./v-hint";
 import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
+import VTooltip from "./v-tooltip";
 import VTable from "./v-table";
-import SingleDropdown from './single-dropdown';
-import MultipleDropdown from './multiple-dropdown';
-import VDivider from './v-divider';
+import SingleDropdown from "./single-dropdown";
+import MultipleDropdown from "./multiple-dropdown";
+import VDivider from "./v-divider";
 
 export default {
   VButton,
@@ -24,10 +27,13 @@ export default {
   VLabel,
   VNotification,
   VStatus,
+  VTip,
+  VHint,
+  VTooltip,
   VSwitch,
   ThemeSwitch,
   VTable,
   SingleDropdown,
   MultipleDropdown,
-  VDivider
+  VDivider,
 };
