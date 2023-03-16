@@ -11,6 +11,7 @@ import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
 import SingleDropdown from './single-dropdown';
 import MultipleDropdown from './multiple-dropdown';
+import VDivider from './v-divider';
 
 export default {
   VButton,
@@ -25,5 +26,6 @@ export default {
   VSwitch,
   ThemeSwitch,
   SingleDropdown,
-  MultipleDropdown
+  MultipleDropdown,
+  VDivider
 };
