@@ -1,7 +1,7 @@
 {
   "name": "@mybimiboo/uikit",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "yarn run build:lib && yarn run build:style",
