@@ -13,6 +13,7 @@ import VTable from "./v-table";
 import SingleDropdown from './single-dropdown';
 import MultipleDropdown from './multiple-dropdown';
 import VDivider from './v-divider';
+import VMultiFilter from './v-multi-filter';
 
 export default {
   VButton,
@@ -29,5 +30,6 @@ export default {
   VTable,
   SingleDropdown,
   MultipleDropdown,
-  VDivider
+  VDivider,
+  VMultiFilter,
 };
