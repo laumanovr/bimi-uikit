@@ -1,6 +1,6 @@
 {
-  "name": "@bimiboo/ui-kit",
-  "version": "0.1.0",
+  "name": "@mybimiboo/uikit",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,8 +12,10 @@
     "build-storybook": "build-storybook -o storybook"
   },
   "dependencies": {
-    "bootstrap": "5.2.3",
+    "@popperjs/core": "2.4.4",
+    "bootstrap": "^4.5.3",
     "core-js": "^3.8.3",
+    "hoverintent": "2.2.1",
     "sass": "1.57.1",
     "sass-loader": "13.2.0",
     "vue": "2.6.14"
