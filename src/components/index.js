@@ -16,6 +16,7 @@ import VTable from "./v-table";
 import SingleDropdown from "./single-dropdown";
 import MultipleDropdown from "./multiple-dropdown";
 import VDivider from "./v-divider";
+import VCheckbox from "./v-checkbox";
 
 export default {
   VButton,
@@ -36,4 +37,5 @@ export default {
   SingleDropdown,
   MultipleDropdown,
   VDivider,
+  VCheckbox,
 };
