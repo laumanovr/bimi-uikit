@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: "v-checkbox",
   model: {
     prop: "checked",
     event: "change",
@@ -48,40 +49,42 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "../../styles/_colors";
+
 .select {
-  width: 1.067rem;
-  height: 1.067rem;
+  width: 16px;
+  height: 16px;
   display: flex;
   cursor: pointer;
   &__input {
-    width: 1.067rem;
-    height: 1.067rem;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     cursor: pointer;
     vertical-align: top;
     outline: none;
     flex-shrink: 0;
-    border: 0.067rem solid $grey-400;
+    border: 1px solid $grey-400;
     border-radius: 6.667rem;
     &:hover {
       transition: border 0.3s ease-in-out;
-      border: 0.067rem solid $black-900;
+      border: 1px solid $black-900;
     }
     &_selected {
-      background-image: url("~@/assets/img/icon/mark-black.svg");
+      background-image: url("../../assets/img/icon/mark-black.svg");
       background-repeat: no-repeat;
-      background-position: 50% 0.2rem;
+      background-position: 50% 3px;
       background-size: auto;
-      border: 0.067rem solid $black-900;
+      border: 1px solid $black-900;
     }
     &:checked {
-      background-image: url("~@/assets/img/icon/mark.svg");
+      background-image: url("../../assets/img/icon/mark.svg");
       background-repeat: no-repeat;
-      background-position: 50% 0.2rem;
+      background-position: 50% 3px;
       background-size: auto;
       background-color: $black-900;
-      border: 0.067rem solid $black-900;
+      border: 1px solid $black-900;
     }
     &:disabled {
       opacity: 0.2;
