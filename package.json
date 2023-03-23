@@ -1,17 +1,21 @@
 {
-  "name": "ui-kit",
-  "version": "0.1.0",
+  "name": "@mybimiboo/uikit",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "yarn run build:lib && yarn run build:style",
+    "build:lib": "vue-cli-service build --target lib --name ui-kit src/index.js",
+    "build:style": "sass src/styles/main.scss dist/styles.css --style compressed",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o storybook"
   },
   "dependencies": {
-    "bootstrap": "5.2.3",
+    "@popperjs/core": "2.4.4",
+    "bootstrap": "^4.5.3",
     "core-js": "^3.8.3",
+    "hoverintent": "2.2.1",
     "sass": "1.57.1",
     "sass-loader": "13.2.0",
     "vue": "2.6.14"

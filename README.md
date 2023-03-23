@@ -1,4 +1,4 @@
-# ui-kit
+# uikit
 
 ## Storybook
 ```
@@ -24,4 +24,21 @@ yarn build
 ### Lints and fixes files
 ```
 yarn lint
+```
+
+## Deploy storybook and package (master)
+
+### Find highest version in tags
+```
+git tag --list
+```
+
+### Push changes
+
+v0.0.1 - example. If highest version will be v0.0.4, you put v0.0.5
+
+```
+git push -u origin master
+git tag v0.0.1
+git push -u origin --tags
 ```

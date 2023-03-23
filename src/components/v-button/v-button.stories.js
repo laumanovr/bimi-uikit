@@ -1,15 +1,14 @@
-import VButton from './v-button';
+import VButton from "./v-button";
 
 export default {
-    /* 👇 The title prop is optional.
-    * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
-    * to learn how to generate automatic titles
-    */
-    title: 'v-button',
-    component: VButton,
-  };
+  title: "v-button",
+  component: VButton,
+};
 
-  export const Primary = () => ({
-    components: { VButton },
-    template: '<v-button primary label="Button" />',
-  });
+export const Button = (args, { argTypes }) => ({
+  components: { VButton },
+  props: Object.keys(argTypes),
+  template: `<div>
+      <v-button v-bind="$props" v-on="$props" />
+    </div>`,
+});

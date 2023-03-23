@@ -54,3 +54,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Oswald';
+  src: url('Oswald-Regular.ttf');
+  src: url('Oswald-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
