@@ -17,6 +17,7 @@ import SingleDropdown from "./single-dropdown";
 import MultipleDropdown from "./multiple-dropdown";
 import VDivider from "./v-divider";
 import VCheckbox from "./v-checkbox";
+import InputSearch from "./input-search";
 
 export default {
   VButton,
@@ -38,4 +39,5 @@ export default {
   MultipleDropdown,
   VDivider,
   VCheckbox,
+  InputSearch
 };
