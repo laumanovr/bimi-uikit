@@ -8,7 +8,7 @@
         type="text"
         class="input-search__input"
         placeholder="Type here"
-        v-model="inputText"
+        v-model="localValue"
         @input="onType"
         :disabled="isDisabled"
     >
@@ -16,7 +16,7 @@
         :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
         class="input-search__clear-icon"
         @click="onClear"
-        v-show="inputText"
+        v-show="value"
     >
   </div>
 </template>
@@ -24,7 +24,15 @@
 <script>
 export default {
   name: 'input-search',
+  model: {
+    prop: "value",
+    event: "input"
+  },
   props: {
+    value: {
+      type: String,
+      default: '',
+    },
     isDisabled: {
       type: Boolean,
       default: false
@@ -32,21 +40,21 @@ export default {
   },
   data() {
     return {
-      inputText: ''
+      localValue: this.value
     }
   },
   computed: {
     iconPath() {
-      return this.isDisabled || !this.inputText ? require('../../assets/img/icon/ic-search-gray.svg') : require('../../assets/img/icon/ic-search.svg');
+      return this.isDisabled || !this.value ? require('../../assets/img/icon/ic-search-gray.svg') : require('../../assets/img/icon/ic-search.svg');
     }
   },
   methods: {
-    onType() {
-      this.$emit('input', this.inputText);
+    onType(e) {
+      this.$emit('input', e.target.value);
     },
     onClear() {
-      this.inputText = '';
-      this.$emit('onClear', '');
+      this.localValue = '';
+      this.$emit('input', '');
     }
   }
 }
