@@ -10,12 +10,12 @@ export const SearchInput = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     data() {
       return {
-          inputValue: ''
+          parentValue: ''
       }
     },
     template: `
       <div style="margin-top: 30px;">
-        <input-search v-model="inputValue" />
+        <input-search v-model="parentValue" />
       </div>
     `
 })
