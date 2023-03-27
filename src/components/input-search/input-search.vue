@@ -1,17 +1,43 @@
 <template>
   <div class="input-search">
-    <img :src="require('../../assets/img/icon/ic-search.svg')" class="input-search__loupe-icon">
-    <input type="text" class="input-search__input" placeholder="Type here" v-model="inputText" @input="onType">
-    <img :src="require('../../assets/img/icon/rounded-gray-cross.svg')" class="input-search__clear-icon" @click="onClear" v-show="inputText">
+    <img
+        :src="iconPath"
+        class="input-search__loupe-icon"
+    >
+    <input
+        type="text"
+        class="input-search__input"
+        placeholder="Type here"
+        v-model="inputText"
+        @input="onType"
+        :disabled="isDisabled"
+    >
+    <img
+        :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
+        class="input-search__clear-icon"
+        @click="onClear"
+        v-show="inputText"
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: 'input-search',
+  props: {
+    isDisabled: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       inputText: ''
+    }
+  },
+  computed: {
+    iconPath() {
+      return this.isDisabled || !this.inputText ? require('../../assets/img/icon/ic-search-gray.svg') : require('../../assets/img/icon/ic-search.svg');
     }
   },
   methods: {
