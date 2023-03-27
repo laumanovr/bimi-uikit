@@ -14,6 +14,8 @@ export const SearchInput = (args, { argTypes }) => ({
         }
     },
     template: `
+      <div style="margin-top: 30px;">
         <input-search @onType="onTyping" />
+      </div>
     `
 })
