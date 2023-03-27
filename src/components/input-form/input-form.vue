@@ -8,7 +8,7 @@
       >
       <div
           class="input-form__label"
-          :class="{'input-form__label-focus': isLinear && textValue, 'input-form__label-disabled': isDisabled}"
+          :class="{'input-form__label-focus': isLinear && value, 'input-form__label-disabled': isDisabled}"
           @click="focusOnInput"
           v-if="isLinear"
       >
@@ -19,7 +19,7 @@
           class="input-form__input"
           :class="{'input-form__input--padding': isCorrect || errorMsg}"
           v-model="textValue"
-          @input="$emit('input', textValue)" :placeholder="!isLinear ? 'Type here' : ''"
+          @input="$emit('input', $event.target.value)" :placeholder="!isLinear ? 'Type here' : ''"
           ref="inputForm"
           :disabled="isDisabled"
       >
@@ -36,7 +36,7 @@
       <img
           :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
           class="input-form__clear-icon"
-          v-show="textValue"
+          v-show="value"
           @click="onClear"
       >
     </div>
@@ -47,7 +47,15 @@
 <script>
 export default {
   name: 'input-form',
+  model: {
+    prop: "value",
+    event: "input"
+  },
   props: {
+    value: {
+      type: String,
+      default: ''
+    },
     labelName: {
       type: String,
       default: 'Label Name'
@@ -71,18 +79,18 @@ export default {
   },
   data() {
     return {
-      textValue: ''
+      textValue: this.value
     }
   },
   computed: {
     iconPath() {
-      return this.isDisabled || !this.textValue ? require('../../assets/img/icon/ic-star-gray.svg') : require('../../assets/img/icon/ic-temp.svg');
+      return this.isDisabled || !this.value ? require('../../assets/img/icon/ic-star-gray.svg') : require('../../assets/img/icon/ic-temp.svg');
     }
   },
   methods: {
     onClear() {
       this.textValue = '';
-      this.$emit('onClear', this.textValue);
+      this.$emit('input', '');
     },
     focusOnInput() {
       this.$refs.inputForm.focus();
