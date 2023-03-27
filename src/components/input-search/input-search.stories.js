@@ -8,14 +8,14 @@ export default {
 export const SearchInput = (args, { argTypes }) => ({
     components: { InputSearch },
     props: Object.keys(argTypes),
-    methods: {
-        onTyping(text) {
-            console.log(text);
-        }
+    data() {
+      return {
+          inputValue: ''
+      }
     },
     template: `
       <div style="margin-top: 30px;">
-        <input-search @onType="onTyping" />
+        <input-search v-model="inputValue" />
       </div>
     `
 })

@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     onType() {
-      this.$emit('onType', this.inputText);
+      this.$emit('input', this.inputText);
     },
     onClear() {
       this.inputText = '';
