@@ -17,6 +17,9 @@ import SingleDropdown from './single-dropdown';
 import MultipleDropdown from './multiple-dropdown';
 import VDivider from './v-divider';
 import VMultiFilter from './v-multi-filter';
+import VCheckbox from "./v-checkbox";
+import InputSearch from "./input-search";
+import InputForm from "./input-form";
 
 
 export default {
@@ -39,4 +42,7 @@ export default {
   MultipleDropdown,
   VDivider,
   VMultiFilter,
+  VCheckbox,
+  InputSearch,
+  InputForm
 };
