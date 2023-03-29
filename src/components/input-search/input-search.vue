@@ -1,12 +1,13 @@
 <template>
-  <div class="input-search">
+  <div class="input-search" @mouseenter="onHover(true)" @mouseleave="onHover(false)">
     <img
-        :src="iconPath"
+        :src="isDisabled ? disabledIcon : iconPath"
         class="input-search__loupe-icon"
     >
     <input
         type="text"
         class="input-search__input"
+        :class="{'input-search__input--disabled': isDisabled}"
         placeholder="Type here"
         v-model="localValue"
         @input="onType"
@@ -16,7 +17,7 @@
         :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
         class="input-search__clear-icon"
         @click="onClear"
-        v-show="value"
+        v-show="value && !isDisabled"
     >
   </div>
 </template>
@@ -40,12 +41,16 @@ export default {
   },
   data() {
     return {
-      localValue: this.value
+      localValue: this.value,
+      isHovered: false
     }
   },
   computed: {
     iconPath() {
-      return this.isDisabled || !this.value ? require('../../assets/img/icon/ic-search-gray.svg') : require('../../assets/img/icon/ic-search.svg');
+      return this.isHovered || this.value ? require('../../assets/img/icon/ic-search.svg') : require('../../assets/img/icon/ic-search-gray.svg');
+    },
+    disabledIcon() {
+      return require('../../assets/img/icon/ic-search-disabled.svg');
     }
   },
   methods: {
@@ -55,6 +60,9 @@ export default {
     onClear() {
       this.localValue = '';
       this.$emit('input', '');
+    },
+    onHover(value) {
+      this.isHovered = value;
     }
   }
 }
@@ -83,6 +91,10 @@ export default {
     font-size: 12px;
     color: $black-900;
     outline: none;
+    &--disabled {
+      cursor: default;
+      color: $grey-700;
+    }
   }
   &__clear-icon {
     position: absolute;
