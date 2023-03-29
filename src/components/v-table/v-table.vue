@@ -1,6 +1,6 @@
 <template>
   <table class="table">
-    <thead>
+    <thead :class="{'th-sticky' : this.sticky}">
     <tr>
       <th v-for="(field, idx) in fields" :key="idx">
         <template>
@@ -42,6 +42,10 @@ export default {
     items: {
       type: Array,
       default: () => example.items
+    },
+    sticky: {
+      type: Boolean,
+      default: () => false
     }
   }
 }
