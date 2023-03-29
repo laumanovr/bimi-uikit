@@ -1,6 +1,6 @@
 <template>
   <div class="input-form" :class="{'input-form--linear': isLinear}" @mouseenter="onHover(true)" @mouseleave="onHover(false)">
-    <div class="input-form__label" v-if="!isLinear">{{labelName}}</div>
+    <div class="input-form__label" :class="{'input-form__label--small': smallLabel}" v-if="!isLinear">{{labelName}}</div>
     <div class="input-form__wrapper">
       <img
           :src="isDisabled ? disabledIcon : iconPath"
@@ -40,6 +40,7 @@
           @click="onClear"
       >
     </div>
+    <div class="input-form__hint" v-if="hintMsg">{{hintMsg}}</div>
     <div class="input-form__error-msg" v-if="errorMsg">{{errorMsg}}</div>
   </div>
 </template>
@@ -63,6 +64,14 @@ export default {
     errorMsg: {
       type: String,
       default: ''
+    },
+    hintMsg: {
+      type: String,
+      default: ''
+    },
+    smallLabel: {
+      type: Boolean,
+      default: false
     },
     isCorrect: {
       type: Boolean,
@@ -116,6 +125,10 @@ export default {
     font-size: 13px;
     color: $grey;
     margin: 0 0 5px 20px;
+    &--small {
+      font-weight: 700;
+      font-size: 11px;
+    }
   }
   &__wrapper {
     display: flex;
@@ -162,6 +175,12 @@ export default {
     font-weight: 500;
     font-size: 11px;
     color: $red;
+  }
+  &__hint {
+    font-weight: 500;
+    font-size: 11px;
+    color: $grey-800;
+    margin: 5px 0 0 20px;
   }
 }
 
