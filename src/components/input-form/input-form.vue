@@ -1,9 +1,9 @@
 <template>
-  <div class="input-form" :class="{'input-form--linear': isLinear}">
+  <div class="input-form" :class="{'input-form--linear': isLinear}" @mouseenter="onHover(true)" @mouseleave="onHover(false)">
     <div class="input-form__label" v-if="!isLinear">{{labelName}}</div>
     <div class="input-form__wrapper">
       <img
-          :src="iconPath"
+          :src="isDisabled ? disabledIcon : iconPath"
           class="input-form__star-icon"
       >
       <div
@@ -17,7 +17,7 @@
       <input
           type="text"
           class="input-form__input"
-          :class="{'input-form__input--padding': isCorrect || errorMsg}"
+          :class="{'input-form__input--padding': isCorrect || errorMsg, 'input-form__input--disabled': isDisabled}"
           v-model="textValue"
           @input="$emit('input', $event.target.value)" :placeholder="!isLinear ? 'Type here' : ''"
           ref="inputForm"
@@ -36,7 +36,7 @@
       <img
           :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
           class="input-form__clear-icon"
-          v-show="value"
+          v-show="value && !isDisabled"
           @click="onClear"
       >
     </div>
@@ -79,12 +79,16 @@ export default {
   },
   data() {
     return {
-      textValue: this.value
+      textValue: this.value,
+      isHovered: false
     }
   },
   computed: {
     iconPath() {
-      return this.isDisabled || !this.value ? require('../../assets/img/icon/ic-star-gray.svg') : require('../../assets/img/icon/ic-temp.svg');
+      return this.isHovered || this.value ? require('../../assets/img/icon/ic-temp.svg') : require('../../assets/img/icon/ic-star-gray.svg');
+    },
+    disabledIcon() {
+      return require('../../assets/img/icon/ic-star-disabled.svg');
     }
   },
   methods: {
@@ -94,6 +98,9 @@ export default {
     },
     focusOnInput() {
       this.$refs.inputForm.focus();
+    },
+    onHover(value) {
+      this.isHovered = value;
     }
   }
 
@@ -131,6 +138,10 @@ export default {
     color: $black-900;
     &--padding {
       padding: 0 60px 0 42px;
+    }
+    &--disabled {
+      cursor: default;
+      color: $grey-700;
     }
   }
   &__state-icon {
