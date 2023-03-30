@@ -17,7 +17,7 @@ export const DropdownMultiple = (args, { argTypes }) => ({
     template: `
       <div style="display: flex; align-items: flex-start">
         <multiple-dropdown :items="list" style="margin-right: 50px;" />
-        <multiple-dropdown :items="list2" is-reversed dropdown-name="Multiple dropdown reversed" />
+        <multiple-dropdown :items="list2" is-reversed dropdown-name="Multiple reversed" />
       </div>
     `
 })
