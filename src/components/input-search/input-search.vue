@@ -83,7 +83,7 @@ export default {
   &__input {
     width: 100%;
     background: $white-100;
-    height: 32px;
+    height: 30px;
     padding: 0 30px 0 40px;
     border: 1px solid $grey-400;
     border-radius: 100px;
