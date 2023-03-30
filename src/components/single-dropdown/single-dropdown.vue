@@ -63,19 +63,22 @@ export default {
     border-radius: 20px;
     cursor: pointer;
     background: $white;
+    padding: 2px 8px;
   }
   &__list {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
-    padding: 15px 10px;
+    padding: 20px 10px 10px;
     min-width: 130px;
+    margin-top: 8px;
   }
   &__wrapper-item {
     display: flex;
     align-items: center;
-    padding: 5px 15px;
-    margin-bottom: 11px;
+    padding: 0 15px;
+    margin-bottom: 10px;
     cursor: pointer;
+    height: 30px;
     &:hover {
       background: $grey-300;
       border-radius: 30px;
