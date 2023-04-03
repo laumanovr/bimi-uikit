@@ -13,12 +13,14 @@ import VSwitch from "./v-switch";
 import ThemeSwitch from "./theme-switch";
 import VTooltip from "./v-tooltip";
 import VTable from "./v-table";
-import SingleDropdown from "./single-dropdown";
-import MultipleDropdown from "./multiple-dropdown";
-import VDivider from "./v-divider";
+import SingleDropdown from './single-dropdown';
+import MultipleDropdown from './multiple-dropdown';
+import VDivider from './v-divider';
+import VMultiFilter from './v-multi-filter';
 import VCheckbox from "./v-checkbox";
 import InputSearch from "./input-search";
 import InputForm from "./input-form";
+
 
 export default {
   VButton,
@@ -39,6 +41,7 @@ export default {
   SingleDropdown,
   MultipleDropdown,
   VDivider,
+  VMultiFilter,
   VCheckbox,
   InputSearch,
   InputForm

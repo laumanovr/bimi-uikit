@@ -1,0 +1,50 @@
+.checkbox-container {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  &__label {
+    font-size: .8rem;
+    color: $black-900;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding-left: 15px;
+    margin: 0;
+  }
+  input {
+    width: 0;
+    height: 0;
+    display: none;
+    position: absolute;
+    &:checked ~ .checkbox-container__checkmark {
+      background-color: $black;
+      &:after {
+        display: block;
+      }
+    }
+  }
+  &__checkmark {
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    background-color: $white;
+    border-radius: 50%;
+    border: 1px solid $grey-400;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 0;
+      left: 4px;
+      width: 5px;
+      height: 10px;
+      border: solid $white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
