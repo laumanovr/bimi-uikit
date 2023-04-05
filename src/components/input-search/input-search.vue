@@ -78,7 +78,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 17px;
+    left: 15px;
   }
   &__input {
     width: 100%;
@@ -100,7 +100,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 9px;
+    right: 5px;
     cursor: pointer;
   }
 }
