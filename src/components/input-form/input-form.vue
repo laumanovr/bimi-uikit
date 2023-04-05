@@ -17,7 +17,7 @@
       <input
           type="text"
           class="input-form__input"
-          :class="{'input-form__input--padding': isCorrect || errorMsg, 'input-form__input--disabled': isDisabled}"
+          :class="{'input-form__input--disabled': isDisabled}"
           v-model="textValue"
           @input="$emit('input', $event.target.value)" :placeholder="!isLinear ? 'Type here' : ''"
           ref="inputForm"
@@ -36,7 +36,7 @@
       <img
           :src="require('../../assets/img/icon/rounded-gray-cross.svg')"
           class="input-form__clear-icon"
-          v-show="value && !isDisabled"
+          v-show="value && !isDisabled && !isCorrect && !errorMsg"
           @click="onClear"
       >
     </div>
@@ -124,7 +124,7 @@ export default {
     font-weight: 500;
     font-size: 13px;
     color: $grey;
-    margin: 0 0 5px 20px;
+    margin: 0 0 5px 16px;
     &--small {
       font-weight: 700;
       font-size: 11px;
@@ -138,7 +138,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 18px;
+    left: 15px;
   }
   &__input {
     width: 100%;
@@ -147,11 +147,8 @@ export default {
     background: $white-100;
     border: 1px solid $grey-400;
     border-radius: 100px;
-    padding: 0 35px 0 42px;
+    padding: 0 35px 0 40px;
     color: $black-900;
-    &--padding {
-      padding: 0 60px 0 42px;
-    }
     &--disabled {
       cursor: default;
       color: $grey-700;
@@ -161,17 +158,17 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 36px;
+    right: 9px;
   }
   &__clear-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 13px;
+    right: 9px;
     cursor: pointer;
   }
   &__error-msg {
-    margin: 5px 0 0 20px;
+    margin: 5px 0 0 14px;
     font-weight: 500;
     font-size: 11px;
     color: $red;
@@ -180,7 +177,7 @@ export default {
     font-weight: 500;
     font-size: 11px;
     color: $grey-800;
-    margin: 5px 0 0 20px;
+    margin: 5px 0 0 14px;
   }
 }
 
@@ -191,7 +188,7 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease-in-out;
-    left: 42px;
+    left: 25px;
     z-index: 999;
     margin: 0;
     &-focus {
@@ -211,6 +208,19 @@ export default {
     border: 0;
     border-radius: 0;
     border-bottom: 1px solid $grey-400;
+    padding: 0 25px 0 25px;
+  }
+  .input-form__star-icon {
+    left: 0;
+  }
+  .input-form__hint {
+    margin: 5px 0 0 0;
+  }
+  .input-form__error-msg {
+    margin: 5px 0 0 0;
+  }
+  .input-form__clear-icon, .input-form__state-icon {
+    right: 0;
   }
 }
 </style>
