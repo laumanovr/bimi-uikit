@@ -90,9 +90,9 @@ export default {
     color: $black-900;
   }
   &__icon {
-    margin-right: 12px;
-    width: 16px;
-    height: 16px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
   }
   &--active {
     background: #C8EE44;
